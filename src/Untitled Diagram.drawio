@@ -1,0 +1,87 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36" version="29.3.1">
+  <diagram id="R2lEEEUBdFMjLlhIrx00" name="Hotel Review Swimlane Flow">
+    <mxGraphModel dx="1906" dy="971" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0" extFonts="Permanent Marker^https://fonts.googleapis.com/css?family=Permanent+Marker">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="UCoZzSqc3gp2TcZzrFRB-311" parent="1" style="swimlane;horizontal=0;startSize=20;fillColor=#dae8fc;strokeColor=#6c8ebf;whiteSpace=wrap;html=1;" value="C端用户" vertex="1">
+          <mxGeometry height="1100" width="400" x="40" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="UCoZzSqc3gp2TcZzrFRB-312" parent="UCoZzSqc3gp2TcZzrFRB-311" style="rounded=1;fillColor=#dae8fc;strokeColor=#6c8ebf;whiteSpace=wrap;html=1;" value="用户下单&lt;br&gt;表:&amp;nbsp;t_order" vertex="1">
+          <mxGeometry height="60" width="240" x="80" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="UCoZzSqc3gp2TcZzrFRB-313" parent="UCoZzSqc3gp2TcZzrFRB-311" style="rounded=1;fillColor=#dae8fc;strokeColor=#6c8ebf;whiteSpace=wrap;html=1;" value="用户离店&lt;br&gt;表: t_order,&amp;nbsp;&lt;span style=&quot;background-color: rgb(41, 60, 64); color: rgb(106, 171, 115); font-family: &amp;quot;JetBrains Mono&amp;quot;, monospace; font-size: 9pt;&quot;&gt;status = 40&lt;/span&gt;" vertex="1">
+          <mxGeometry height="60" width="240" x="80" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="UCoZzSqc3gp2TcZzrFRB-314" parent="UCoZzSqc3gp2TcZzrFRB-311" style="rounded=1;fillColor=#dae8fc;strokeColor=#6c8ebf;whiteSpace=wrap;html=1;" value="提交评价(草稿)&lt;br&gt;表: hotel_review\nreview_status=0" vertex="1">
+          <mxGeometry height="80" width="240" x="80" y="220" as="geometry" />
+        </mxCell>
+        <mxCell id="UCoZzSqc3gp2TcZzrFRB-334" edge="1" parent="UCoZzSqc3gp2TcZzrFRB-311" source="UCoZzSqc3gp2TcZzrFRB-315" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="UCoZzSqc3gp2TcZzrFRB-312">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="30" y="360" />
+              <mxPoint x="30" y="90" />
+            </Array>
+            <mxPoint x="60" y="50" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="UCoZzSqc3gp2TcZzrFRB-335" connectable="0" parent="UCoZzSqc3gp2TcZzrFRB-334" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="更新是否评价字段" vertex="1">
+          <mxGeometry relative="1" x="0.1053" y="-2" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="UCoZzSqc3gp2TcZzrFRB-315" parent="UCoZzSqc3gp2TcZzrFRB-311" style="rounded=1;fillColor=#d5e8d4;strokeColor=#6c8ebf;whiteSpace=wrap;html=1;" value="发布评价&lt;br&gt;hotel_review.review_status=1" vertex="1">
+          <mxGeometry height="80" width="240" x="80" y="320" as="geometry" />
+        </mxCell>
+        <mxCell id="UCoZzSqc3gp2TcZzrFRB-316" parent="1" style="swimlane;horizontal=0;startSize=20;fillColor=#d5e8d4;strokeColor=#82b366;whiteSpace=wrap;html=1;" value="PMS管理后台" vertex="1">
+          <mxGeometry height="1100" width="820" x="460" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="UCoZzSqc3gp2TcZzrFRB-317" parent="UCoZzSqc3gp2TcZzrFRB-316" style="rounded=1;fillColor=#d5e8d4;strokeColor=#82b366;whiteSpace=wrap;html=1;" value="回复评价&lt;br&gt;表: hotel_review_reply" vertex="1">
+          <mxGeometry height="80" width="240" x="80" y="320" as="geometry" />
+        </mxCell>
+        <mxCell id="UCoZzSqc3gp2TcZzrFRB-318" parent="UCoZzSqc3gp2TcZzrFRB-316" style="rounded=1;fillColor=#fff2cc;strokeColor=#82b366;whiteSpace=wrap;html=1;" value="评价置顶/取消置顶hotel_review.is_top/top_sort" vertex="1">
+          <mxGeometry height="80" width="240" x="80" y="420" as="geometry" />
+        </mxCell>
+        <mxCell id="UCoZzSqc3gp2TcZzrFRB-322" parent="UCoZzSqc3gp2TcZzrFRB-316" style="rounded=1;fillColor=#ffd699;strokeColor=#d6b656;whiteSpace=wrap;html=1;" value="更新评价统计\n表: hotel_review_summary\n影响C端展示" vertex="1">
+          <mxGeometry height="100" width="1220" x="-400" y="690" as="geometry" />
+        </mxCell>
+        <mxCell id="UCoZzSqc3gp2TcZzrFRB-319" parent="1" style="swimlane;horizontal=0;startSize=20;fillColor=#f8cecc;strokeColor=#b85450;whiteSpace=wrap;html=1;" value="CMS管理后台" vertex="1">
+          <mxGeometry height="1100" width="400" x="880" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="UCoZzSqc3gp2TcZzrFRB-320" parent="UCoZzSqc3gp2TcZzrFRB-319" style="rounded=1;fillColor=#f8cecc;strokeColor=#b85450;whiteSpace=wrap;html=1;" value="隐藏评价&lt;br&gt;hotel_review.is_hide=1&lt;br&gt;记录日志" vertex="1">
+          <mxGeometry height="80" width="240" x="80" y="320" as="geometry" />
+        </mxCell>
+        <mxCell id="UCoZzSqc3gp2TcZzrFRB-321" parent="UCoZzSqc3gp2TcZzrFRB-319" style="rounded=1;fillColor=#f8cecc;strokeColor=#b85450;whiteSpace=wrap;html=1;" value="取消隐藏评价&lt;br&gt;hotel_review.is_hide=0" vertex="1">
+          <mxGeometry height="80" width="240" x="80" y="420" as="geometry" />
+        </mxCell>
+        <mxCell id="UCoZzSqc3gp2TcZzrFRB-330" edge="1" parent="UCoZzSqc3gp2TcZzrFRB-319">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="203.75" y="410" as="sourcePoint" />
+            <mxPoint x="230" y="690" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="UCoZzSqc3gp2TcZzrFRB-323" edge="1" parent="1" source="UCoZzSqc3gp2TcZzrFRB-312" target="UCoZzSqc3gp2TcZzrFRB-313">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="UCoZzSqc3gp2TcZzrFRB-324" edge="1" parent="1" source="UCoZzSqc3gp2TcZzrFRB-313" target="UCoZzSqc3gp2TcZzrFRB-314">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="UCoZzSqc3gp2TcZzrFRB-325" edge="1" parent="1" source="UCoZzSqc3gp2TcZzrFRB-314" target="UCoZzSqc3gp2TcZzrFRB-315">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="UCoZzSqc3gp2TcZzrFRB-326" edge="1" parent="1" source="UCoZzSqc3gp2TcZzrFRB-315" target="UCoZzSqc3gp2TcZzrFRB-317">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="UCoZzSqc3gp2TcZzrFRB-327" edge="1" parent="1" source="UCoZzSqc3gp2TcZzrFRB-315" target="UCoZzSqc3gp2TcZzrFRB-320">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="UCoZzSqc3gp2TcZzrFRB-331" edge="1" parent="1" source="UCoZzSqc3gp2TcZzrFRB-321" style="entryX=0.836;entryY=-0.03;entryDx=0;entryDy=0;entryPerimeter=0;" target="UCoZzSqc3gp2TcZzrFRB-322">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="UCoZzSqc3gp2TcZzrFRB-332" edge="1" parent="1" source="UCoZzSqc3gp2TcZzrFRB-315" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.148;entryY=0.008;entryDx=0;entryDy=0;entryPerimeter=0;" target="UCoZzSqc3gp2TcZzrFRB-322">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
