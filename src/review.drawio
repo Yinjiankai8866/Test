@@ -4,6 +4,45 @@
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="YSoEFGaMcaT80WwX-lRf-27" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="&lt;b&gt;hotel_review（酒店评价主表）&lt;/b&gt;&#xa;--------------------------------&#xa;PK id（主键）&#xa;hotel_id（酒店ID）&#xa;shop_id（PMS酒店ID）&#xa;shop_name（门店名称）&#xa;order_no（订单号）&#xa;pms_order_no（PMS预订单号）&#xa;member_id（会员ID）&#xa;overall_review（整体评价）&#xa;overall_rating（综合评分）&#xa;facility_rating（设施评分）&#xa;service_rating（服务评分）&#xa;cleanliness_rating（卫生评分）&#xa;environment_rating（环境评分）&#xa;content（评价内容）&#xa;content_length（内容长度）&#xa;selected_tags（选中标签）&#xa;is_anonymous（是否匿名）&#xa;review_status（评价状态）&#xa;hide_type（隐藏类型）&#xa;hide_reason（隐藏原因）&#xa;is_top（是否置顶）&#xa;top_sort（置顶排序）&#xa;useful_count（有用数）&#xa;check_in_date（入住日期）&#xa;room_type（房型）&#xa;review_type（评论类型）&#xa;draft_time（草稿时间）&#xa;publish_time（发布时间）&#xa;create_time（创建时间）&#xa;update_time（更新时间）&#xa;pms_updater（PMS更新人）&#xa;merchant_updater（商家更新人）&#xa;is_hide（是否隐藏）" vertex="1">
+          <mxGeometry height="760" width="520" x="620" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="YSoEFGaMcaT80WwX-lRf-28" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" value="&lt;b&gt;hotel_review_reply（酒店评价回复表）&lt;/b&gt;&#xa;--------------------------------&#xa;PK id（主键）&#xa;UK review_id（评价ID）&#xa;content（回复内容）&#xa;reply_user（回复人）&#xa;create_time（创建时间）&#xa;update_time（更新时间）" vertex="1">
+          <mxGeometry height="260" width="420" x="1320" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="YSoEFGaMcaT80WwX-lRf-29" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="&lt;b&gt;hotel_review_operation_log（评价操作日志表）&lt;/b&gt;&#xa;--------------------------------&#xa;PK id（主键）&#xa;review_id（评价ID）&#xa;updater（操作人ID）&#xa;updater_name（操作人名称）&#xa;event_type（事件类型）&#xa;application_type（申请类型）&#xa;log_content（日志内容）&#xa;create_time（创建时间）&#xa;update_time（更新时间）" vertex="1">
+          <mxGeometry height="300" width="420" x="1320" y="360" as="geometry" />
+        </mxCell>
+        <mxCell id="YSoEFGaMcaT80WwX-lRf-30" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="&lt;b&gt;hotel_review_tag（评价标签表）&lt;/b&gt;&#xa;--------------------------------&#xa;PK id（标签ID）&#xa;tag_name（标签名称）&#xa;tag_type（标签类型）&#xa;sort_order（排序）&#xa;is_active（是否启用）&#xa;create_time（创建时间）" vertex="1">
+          <mxGeometry height="260" width="420" x="80" y="880" as="geometry" />
+        </mxCell>
+        <mxCell id="YSoEFGaMcaT80WwX-lRf-31" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" value="&lt;b&gt;hotel_review_tag_rel（评价标签关联表）&lt;/b&gt;&#xa;--------------------------------&#xa;PK id（主键）&#xa;review_id（评价ID）&#xa;tag_id（标签ID）&#xa;hotel_id（酒店ID）&#xa;create_time（创建时间）" vertex="1">
+          <mxGeometry height="260" width="420" x="620" y="880" as="geometry" />
+        </mxCell>
+        <mxCell id="YSoEFGaMcaT80WwX-lRf-32" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="&lt;b&gt;hotel_review_useful（评价有用记录表）&lt;/b&gt;&#xa;--------------------------------&#xa;PK id（主键）&#xa;review_id（评价ID）&#xa;member_id（会员ID）&#xa;create_time（创建时间）" vertex="1">
+          <mxGeometry height="220" width="420" x="1330" y="760" as="geometry" />
+        </mxCell>
+        <mxCell id="YSoEFGaMcaT80WwX-lRf-33" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="&lt;b&gt;hotel_review_summary（酒店评价汇总表）&lt;/b&gt;&#xa;--------------------------------&#xa;PK hotel_id（酒店ID）&#xa;total_reviews（总评论数）&#xa;total_overall_review（整体评价总分）&#xa;total_facility_rating（设施评分总分）&#xa;total_service_rating（服务评分总分）&#xa;total_cleanliness_rating（卫生评分总分）&#xa;total_environment_rating（环境评分总分）&#xa;last_review_time（最近评价时间）" vertex="1">
+          <mxGeometry height="300" width="420" x="80" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="YSoEFGaMcaT80WwX-lRf-34" edge="1" parent="1" source="YSoEFGaMcaT80WwX-lRf-27" style="endArrow=block;html=1;" target="YSoEFGaMcaT80WwX-lRf-28" value="1 ── 1（评价-回复）">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="YSoEFGaMcaT80WwX-lRf-35" edge="1" parent="1" source="YSoEFGaMcaT80WwX-lRf-27" style="endArrow=block;html=1;" target="YSoEFGaMcaT80WwX-lRf-29" value="1 ── N（评价-操作日志）">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="YSoEFGaMcaT80WwX-lRf-36" edge="1" parent="1" source="YSoEFGaMcaT80WwX-lRf-27" style="endArrow=block;html=1;" target="YSoEFGaMcaT80WwX-lRf-31" value="1 ── N（评价-标签关联）">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="YSoEFGaMcaT80WwX-lRf-37" edge="1" parent="1" source="YSoEFGaMcaT80WwX-lRf-30" style="endArrow=block;html=1;" target="YSoEFGaMcaT80WwX-lRf-31" value="1 ── N（标签-评价关联）">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="YSoEFGaMcaT80WwX-lRf-38" edge="1" parent="1" source="YSoEFGaMcaT80WwX-lRf-27" style="endArrow=block;html=1;" target="YSoEFGaMcaT80WwX-lRf-32" value="1 ── N（评价-点赞）">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="YSoEFGaMcaT80WwX-lRf-39" edge="1" parent="1" source="YSoEFGaMcaT80WwX-lRf-27" style="endArrow=block;html=1;" target="YSoEFGaMcaT80WwX-lRf-33" value="N ── 1（酒店维度汇总）">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
