@@ -1,65 +1,57 @@
-<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36" version="29.3.2" pages="2">
-  <diagram name="酒店评价领域模型" id="lxlEYdQ5eURfdHx49fYT">
-    <mxGraphModel dx="1639" dy="882" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36" version="29.6.6">
+  <diagram name="评价服务领域边界" id="zzVvtFfheB3OZWTW_B_k">
+    <mxGraphModel dx="1426" dy="777" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="P3JxCGWqFA3wAqCkwzNf-58" parent="1" style="swimlane;horizontal=0;startSize=20;fillColor=#dae8fc;strokeColor=#6c8ebf;whiteSpace=wrap;html=1;" value="C端用户" vertex="1">
-          <mxGeometry height="600" width="300" x="190" y="100" as="geometry" />
+        <mxCell id="Yosb0MIYbOL0bZqBRF7l-1" parent="1" style="swimlane;horizontal=0;startSize=20;fillColor=#dae8fc;strokeColor=#6c8ebf;whiteSpace=wrap;html=1;" value="C端用户" vertex="1">
+          <mxGeometry height="600" width="300" x="40" y="40" as="geometry" />
         </mxCell>
-        <mxCell id="P3JxCGWqFA3wAqCkwzNf-59" parent="P3JxCGWqFA3wAqCkwzNf-58" style="rounded=1;fillColor=#dae8fc;strokeColor=#6c8ebf;whiteSpace=wrap;html=1;" value="用户(User/Member) ---------- - id: Long - name: String - phone: String - avatar: String  行为： - submitReview() - markUseful()" vertex="1">
+        <mxCell id="Yosb0MIYbOL0bZqBRF7l-2" parent="Yosb0MIYbOL0bZqBRF7l-1" style="rounded=1;fillColor=#dae8fc;strokeColor=#6c8ebf;whiteSpace=wrap;html=1;" value="用户(User/Member) ---------- - id: Long - name: String - phone: String - avatar: String  行为： - submitReview() - markUseful()" vertex="1">
           <mxGeometry height="120" width="220" x="60" y="60" as="geometry" />
         </mxCell>
-        <mxCell id="P3JxCGWqFA3wAqCkwzNf-60" parent="1" style="swimlane;horizontal=0;startSize=20;fillColor=#d5e8d4;strokeColor=#82b366;whiteSpace=wrap;html=1;" value="ReviewService 聚合内部" vertex="1">
-          <mxGeometry height="600" width="400" x="510" y="100" as="geometry" />
+        <mxCell id="Yosb0MIYbOL0bZqBRF7l-3" parent="1" style="swimlane;horizontal=0;startSize=20;fillColor=#d5e8d4;strokeColor=#82b366;whiteSpace=wrap;html=1;" value="ReviewService 聚合内部" vertex="1">
+          <mxGeometry height="600" width="400" x="360" y="40" as="geometry" />
         </mxCell>
-        <mxCell id="P3JxCGWqFA3wAqCkwzNf-61" parent="P3JxCGWqFA3wAqCkwzNf-60" style="rounded=1;fillColor=#d5e8d4;strokeColor=#82b366;whiteSpace=wrap;html=1;" value="HotelReview (聚合根) ---------- - id: Long - hotelId: String - memberId: Long - orderNo: String - content: String - overallRating: Double - reviewStatus: Enum {DRAFT,PUBLISHED,HIDDEN} - isTop: Boolean - isHide: Boolean - createTime: DateTime - publishTime: DateTime  行为： - submitReview() - publish() - hide() - unhide() - setTop()" vertex="1">
+        <mxCell id="Yosb0MIYbOL0bZqBRF7l-4" parent="Yosb0MIYbOL0bZqBRF7l-3" style="rounded=1;fillColor=#d5e8d4;strokeColor=#82b366;whiteSpace=wrap;html=1;" value="HotelReview (聚合根) ---------- - id: Long - hotelId: String - memberId: Long - orderNo: String - content: String - overallRating: Double - reviewStatus: Enum {DRAFT,PUBLISHED,HIDDEN} - isTop: Boolean - isHide: Boolean - createTime: DateTime - publishTime: DateTime  行为： - submitReview() - publish() - hide() - unhide() - setTop()" vertex="1">
           <mxGeometry height="220" width="320" x="60" y="60" as="geometry" />
         </mxCell>
-        <mxCell id="P3JxCGWqFA3wAqCkwzNf-62" parent="P3JxCGWqFA3wAqCkwzNf-60" style="rounded=1;fillColor=#d5e8d4;strokeColor=#82b366;whiteSpace=wrap;html=1;" value="HotelReviewTagRel ---------- - id: Long - reviewId: Long - tagId: Integer - hotelId: String - createTime: DateTime  行为： - addTag() - removeTag()" vertex="1">
+        <mxCell id="Yosb0MIYbOL0bZqBRF7l-5" parent="Yosb0MIYbOL0bZqBRF7l-3" style="rounded=1;fillColor=#d5e8d4;strokeColor=#82b366;whiteSpace=wrap;html=1;" value="HotelReviewTagRel ---------- - id: Long - reviewId: Long - tagId: Integer - hotelId: String - createTime: DateTime  行为： - addTag() - removeTag()" vertex="1">
           <mxGeometry height="140" width="320" x="60" y="300" as="geometry" />
         </mxCell>
-        <mxCell id="P3JxCGWqFA3wAqCkwzNf-63" parent="P3JxCGWqFA3wAqCkwzNf-60" style="rounded=1;fillColor=#d5e8d4;strokeColor=#82b366;whiteSpace=wrap;html=1;" value="HotelReviewUseful ---------- - id: Long - reviewId: Long - memberId: Long - createTime: DateTime  行为： - markUseful()" vertex="1">
+        <mxCell id="Yosb0MIYbOL0bZqBRF7l-6" parent="Yosb0MIYbOL0bZqBRF7l-3" style="rounded=1;fillColor=#d5e8d4;strokeColor=#82b366;whiteSpace=wrap;html=1;" value="HotelReviewUseful ---------- - id: Long - reviewId: Long - memberId: Long - createTime: DateTime  行为： - markUseful()" vertex="1">
           <mxGeometry height="120" width="320" x="60" y="460" as="geometry" />
         </mxCell>
-        <mxCell id="P3JxCGWqFA3wAqCkwzNf-64" parent="1" style="swimlane;horizontal=0;startSize=20;fillColor=#ffd699;strokeColor=#d6b656;whiteSpace=wrap;html=1;" value="外部服务 / 聚合外" vertex="1">
-          <mxGeometry height="600" width="400" x="930" y="100" as="geometry" />
+        <mxCell id="Yosb0MIYbOL0bZqBRF7l-7" parent="1" style="swimlane;horizontal=0;startSize=20;fillColor=#ffd699;strokeColor=#d6b656;whiteSpace=wrap;html=1;" value="外部服务 / 聚合外" vertex="1">
+          <mxGeometry height="600" width="400" x="780" y="40" as="geometry" />
         </mxCell>
-        <mxCell id="P3JxCGWqFA3wAqCkwzNf-65" parent="P3JxCGWqFA3wAqCkwzNf-64" style="rounded=1;fillColor=#ffd699;strokeColor=#d6b656;whiteSpace=wrap;html=1;" value="HotelReviewSummaryService ---------- - updateSummaryOnNewReview() - updateSummaryOnHide() - updateSummaryOnUnhide()" vertex="1">
+        <mxCell id="Yosb0MIYbOL0bZqBRF7l-8" parent="Yosb0MIYbOL0bZqBRF7l-7" style="rounded=1;fillColor=#ffd699;strokeColor=#d6b656;whiteSpace=wrap;html=1;" value="HotelReviewSummaryService ---------- - updateSummaryOnNewReview() - updateSummaryOnHide() - updateSummaryOnUnhide()" vertex="1">
           <mxGeometry height="140" width="320" x="60" y="60" as="geometry" />
         </mxCell>
-        <mxCell id="P3JxCGWqFA3wAqCkwzNf-66" parent="P3JxCGWqFA3wAqCkwzNf-64" style="rounded=1;fillColor=#ffd699;strokeColor=#d6b656;whiteSpace=wrap;html=1;" value="ReviewOperationLogService ---------- - logHide() - logUnhide()" vertex="1">
+        <mxCell id="Yosb0MIYbOL0bZqBRF7l-9" parent="Yosb0MIYbOL0bZqBRF7l-7" style="rounded=1;fillColor=#ffd699;strokeColor=#d6b656;whiteSpace=wrap;html=1;" value="ReviewOperationLogService ---------- - logHide() - logUnhide()" vertex="1">
           <mxGeometry height="120" width="320" x="60" y="220" as="geometry" />
         </mxCell>
-        <mxCell id="P3JxCGWqFA3wAqCkwzNf-67" parent="P3JxCGWqFA3wAqCkwzNf-64" style="rounded=1;fillColor=#ffd699;strokeColor=#d6b656;whiteSpace=wrap;html=1;" value="HotelReviewReplyService ---------- - replyReview()" vertex="1">
+        <mxCell id="Yosb0MIYbOL0bZqBRF7l-10" parent="Yosb0MIYbOL0bZqBRF7l-7" style="rounded=1;fillColor=#ffd699;strokeColor=#d6b656;whiteSpace=wrap;html=1;" value="HotelReviewReplyService ---------- - replyReview()" vertex="1">
           <mxGeometry height="120" width="320" x="60" y="360" as="geometry" />
         </mxCell>
-        <mxCell id="P3JxCGWqFA3wAqCkwzNf-68" edge="1" parent="1" source="P3JxCGWqFA3wAqCkwzNf-59" target="P3JxCGWqFA3wAqCkwzNf-61">
+        <mxCell id="Yosb0MIYbOL0bZqBRF7l-11" edge="1" parent="1" source="Yosb0MIYbOL0bZqBRF7l-2" target="Yosb0MIYbOL0bZqBRF7l-4">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="P3JxCGWqFA3wAqCkwzNf-69" edge="1" parent="1" source="P3JxCGWqFA3wAqCkwzNf-61" target="P3JxCGWqFA3wAqCkwzNf-62">
+        <mxCell id="Yosb0MIYbOL0bZqBRF7l-12" edge="1" parent="1" source="Yosb0MIYbOL0bZqBRF7l-4" target="Yosb0MIYbOL0bZqBRF7l-5">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="P3JxCGWqFA3wAqCkwzNf-70" edge="1" parent="1" source="P3JxCGWqFA3wAqCkwzNf-61" target="P3JxCGWqFA3wAqCkwzNf-63">
+        <mxCell id="Yosb0MIYbOL0bZqBRF7l-13" edge="1" parent="1" source="Yosb0MIYbOL0bZqBRF7l-4" target="Yosb0MIYbOL0bZqBRF7l-6">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="P3JxCGWqFA3wAqCkwzNf-71" edge="1" parent="1" source="P3JxCGWqFA3wAqCkwzNf-61" target="P3JxCGWqFA3wAqCkwzNf-65">
+        <mxCell id="Yosb0MIYbOL0bZqBRF7l-14" edge="1" parent="1" source="Yosb0MIYbOL0bZqBRF7l-4" target="Yosb0MIYbOL0bZqBRF7l-8">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="P3JxCGWqFA3wAqCkwzNf-72" edge="1" parent="1" source="P3JxCGWqFA3wAqCkwzNf-61" target="P3JxCGWqFA3wAqCkwzNf-66">
+        <mxCell id="Yosb0MIYbOL0bZqBRF7l-15" edge="1" parent="1" source="Yosb0MIYbOL0bZqBRF7l-4" target="Yosb0MIYbOL0bZqBRF7l-9">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="P3JxCGWqFA3wAqCkwzNf-73" edge="1" parent="1" source="P3JxCGWqFA3wAqCkwzNf-61" target="P3JxCGWqFA3wAqCkwzNf-67">
+        <mxCell id="Yosb0MIYbOL0bZqBRF7l-16" edge="1" parent="1" source="Yosb0MIYbOL0bZqBRF7l-4" target="Yosb0MIYbOL0bZqBRF7l-10">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-      </root>
-    </mxGraphModel>
-  </diagram>
-  <diagram id="SOqs2TVwMrTJOheBgK1n" name="Page-2">
-    <mxGraphModel dx="1928" dy="1038" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="none" math="0" shadow="0">
-      <root>
-        <mxCell id="0" />
-        <mxCell id="1" parent="0" />
       </root>
     </mxGraphModel>
   </diagram>
